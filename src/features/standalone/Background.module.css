@@ -1,0 +1,25 @@
+.hero-background {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /* z-index: -1; */
+    background: var(--nz-charcoal);
+}
+
+.hero-background::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--nz-charcoal);
+    opacity: 0.6;
+}
+
+.hero-background video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}

@@ -1,13 +1,126 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /***************
+  BRAND COLOURS
+  ***************/
+  --nz-purple: #9B00E3;
+  --nz-pink: #FF4EA6;
+  --nz-blue: #3EF5F4;
+  --nz-green: #19D03E;
+  --nz-grey: #CACACA;
+  --nz-white: #FFFFFF;
+  --nz-charcoal: #191c1f;
+  --nz-black: #000000;
+
+  /******************************
+  TYPOGRAPHY
+  ******************************/
+
+  /* FONT SIZE / LINE HEIGHT */
+  /* Follow the 8pt grid system */
+  --text-64px: 4rem;
+  --text-48px: 3rem;
+  --text-32px: 2rem;
+  --text-24px: 1.5rem;
+  --text-16px: 1rem;
+  --text-12px: 0.75rem;
+
+  --century-gothic: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  --eurostile: "Eurostile";
+  --ramport-one: 'Rampart One', cursive;
+
+  --font-base-size: 16px;
+
+  /***************
+  SPACING
+  ***************/
+
+  --spacing-xxs: 0.125rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 2.5rem;
+  --spacing-xxxl: 4rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/***************
+FONT FACE
+***************/
+
+@font-face {
+  font-family: 'Eurostile';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: local('Eurostile'), url('./assets/fonts/eurostile/eurostile.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: local('Century Gothic Regular'), url('./assets/fonts/century-gothic/GOTHIC.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: italic;
+  font-weight: normal;
+  font-display: auto;
+  src: local('Century Gothic Italic'), url('./assets/fonts/century-gothic/GOTHICI.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: bold;
+  font-display: auto;
+  src: local('Century Gothic Bold'), url('./assets/fonts/century-gothic/GOTHICB.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: italic;
+  font-weight: bold;
+  font-display: auto;
+  src: local('Century Gothic Bold Italic'), url('./assets/fonts/century-gothic/GOTHICBI.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rampart One';
+  src: url('./assets/fonts/ramport-one/RampartOne-Regular.woff2') format('woff2'),
+      url('./assets/fonts/ramport-one/RampartOne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/***************
+DOCUMENT
+***************/
+
+* {
+  box-sizing: border-box;
+  color: var(--nz-white);
+}
+
+html, body {
+  margin: 0;
+  font-family: var(--century-gothic);
+  font-size: var(--font-base-size);
+  background-color: var(--nz-charcoal);
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: var(--nz-pink);
 }

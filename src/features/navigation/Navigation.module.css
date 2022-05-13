@@ -1,0 +1,5 @@
+.nav-container {
+    position: relative;
+    padding-top: var(--top-nav-padding);
+    z-index: 100;
+}

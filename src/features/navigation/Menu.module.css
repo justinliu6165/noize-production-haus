@@ -1,0 +1,23 @@
+:root {
+    --top-nav-padding: 100px;
+    --transitions: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.main-menu {
+    position: fixed;
+    width: 100vw;
+    height: calc(100vh + var(--top-nav-padding));
+    background-color: green;
+    top: calc(-1 * var(--top-nav-padding));
+    transform: translateY(-100%);
+    transition: transform 1s var(--transitions);
+}
+
+.is-active {
+    transform: translateY(0);
+}
+
+.menu-list {
+    position: absolute;
+    display: flex;
+}
