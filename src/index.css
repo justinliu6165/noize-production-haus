@@ -47,6 +47,15 @@
   --spacing-xl: 2rem;
   --spacing-xxl: 2.5rem;
   --spacing-xxxl: 4rem;
+
+  /***************
+  BREAKPOINTS
+  ***************/
+  --screen-sm: 540px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1440px;
+
 }
 
 /***************
@@ -123,4 +132,7 @@ html, body {
 
 a {
   color: var(--nz-pink);
+}
+a:hover {
+  text-decoration: underline;
 }

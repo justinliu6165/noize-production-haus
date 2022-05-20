@@ -49,7 +49,9 @@ module.exports = {
         '24': 'var(--spacing-lg)',
         '32': 'var(--spacing-xl)',
         '40': 'var(--spacing-xxl)',
-        '64': 'var(--spacing-xxxl)'
+        '64': 'var(--spacing-xxxl)',
+        '84': '84px',
+        '128': '128px'
       },
       screens: {
         'sm': '540px',
