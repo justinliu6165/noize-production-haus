@@ -136,3 +136,30 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+h1 {
+  font-size: var(--text-64px);
+  font-family: var(--century-gothic);
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+h2 {
+  font-size: var(--text-48px);
+  font-family: var(--century-gothic);
+  font-weight: bold;
+}
+h3 {
+  font-size: var(--text-32px);
+  font-family: var(--century-gothic);
+  font-weight: bold;
+}
+em {
+  font-family: var(--century-gothic);
+  font-style: italic;
+  font-weight: normal;
+}
+strong {
+  font-family: var(--century-gothic);
+  font-style: normal;
+  font-weight: bold;
+}
