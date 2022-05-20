@@ -27,7 +27,7 @@ export default function Homepage() {
         <Heading text={"We are Noize"} size="h2"></Heading>
         
         <div className='flex justify-center'>
-          <div className="max-w-3xl overflow-hidden rounded-lg">
+          <div className="max-w-3xl overflow-hidden rounded-lg shadow-lg shadow-black">
             <video controls src={introVideo} className="w-full"></video>
           </div>
         </div>
