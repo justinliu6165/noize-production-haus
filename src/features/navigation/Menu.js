@@ -26,7 +26,7 @@ const links = [
     }
 ]
 
-export default function Menu({isMenuActive, onClickHandler}) {
+export default function Menu({isMenuActive, onClickHandler, innerRef}) {
     const [defaultBG, setDefaultBG] = useState(0);
     const [activeBGIndex, setActiveBGIndex] = useState(0);
     const { pathname } = useLocation();
@@ -36,7 +36,7 @@ export default function Menu({isMenuActive, onClickHandler}) {
     }, [])
 
     return (
-        <nav className={`${styles['main-menu']} ${isMenuActive && styles['is-active']}`}>
+        <nav className={`${styles['main-menu']} ${isMenuActive && styles['is-active']}`} ref={innerRef}>
             
             {links.map((link, i) => (
                 <div 
