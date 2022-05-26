@@ -1,0 +1,9 @@
+.animate-fade {
+    opacity: 0;
+    transform: translate3d(0,10px,0);
+    transition: opacity 1500ms ease, transform 1750ms ease;
+}
+.animate-fade.animate {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}

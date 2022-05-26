@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './Carousel.css';
 import Transitioning from './Transition';
 
-import { selectCaseStudies } from './CarouselSlice';
+import { selectCaseStudies } from '../api/CaseStudiesSlice';
 
 export default function Carousel() {
     const cases = useSelector(selectCaseStudies);
