@@ -6,6 +6,9 @@ import Transitioning from './Transition';
 
 import { selectCaseStudies } from '../api/CaseStudiesSlice';
 
+import rightChevron from '../../assets/icons/right-chevron.svg';
+import leftChevron from '../../assets/icons/left-chevron.svg';
+
 export default function Carousel() {
     const cases = useSelector(selectCaseStudies);
     const [activeIndex, setActiveIndex] = useState(0);
@@ -50,9 +53,9 @@ export default function Carousel() {
                                 </div>
                             </Transitioning>
                         </button>
-                        <div className='relative'>
+                        {/* <div className='relative'>
                             <h3 className="absolute w-full top-full eurostile text-16px uppercase">{cases[prevIndex].title}</h3>
-                        </div>
+                        </div> */}
                     </li>
                     <li className="col-span-4"> 
                     
@@ -60,8 +63,8 @@ export default function Carousel() {
                             <Transitioning id={cases[activeIndex].id} animation={animateDirection}>
                                 <div className="project-img" key={cases[activeIndex].id}>
                                     <img src={cases[activeIndex].image.src} alt={cases[activeIndex].image.src}/>
-                                    <div className="m-2 z-10 relative">
-                                        <h3 className="eurostile uppercase" key={cases[activeIndex].title}>{cases[activeIndex].title}</h3>
+                                    <div className="p-16 z-10 absolute bottom-0">
+                                        <h3 className="text-24px eurostile uppercase" key={cases[activeIndex].title}>{cases[activeIndex].title}</h3>
                                     </div>
                                 </div>
                             </Transitioning>
@@ -77,18 +80,18 @@ export default function Carousel() {
                                 </div>
                             </Transitioning>
                         </button>
-                        <div className='relative'>
+                        {/* <div className='relative'>
                             <h3 className="absolute w-full top-full eurostile text-16px uppercase">{cases[nextIndex].title}</h3>
-                        </div>
+                        </div> */}
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div className="flex justify-center align-middle">
-            <button className="border-2 border-white px-4 py-1 m-2 visible md:hidden" onClick={() => navigateSlides('left')}>left</button>
-            <div className="eurostile uppercase p-4 whitespace-nowrap">{activeIndex + 1} / {cases.length}</div>
-            <button className="border-2 border-white px-4 py-1 m-2 visible md:hidden" onClick={() => navigateSlides('right')}>right</button>
+        <div className="flex justify-center items-center">
+            <button className="m-2" onClick={() => navigateSlides('left')}><img src={leftChevron} alt='chevron'/></button>
+            <div className="eurostile uppercase whitespace-nowrap">{activeIndex + 1} / {cases.length}</div>
+            <button className="m-2" onClick={() => navigateSlides('right')}><img src={rightChevron} alt='chevron'/></button>
         </div>
 
         </>
