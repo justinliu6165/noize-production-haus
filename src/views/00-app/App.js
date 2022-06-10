@@ -9,24 +9,27 @@ import SingleCaseStudies from '../04-single-case-study/SingleCaseStudies';
 import Contact from '../05-contact/Contact';
 import Error404 from '../06-error-pages/Error404';
 
+import ScrollToTop from '../../features/functions/ScrollToTop';
+
 function App() {
   return (
     <div className="App">
       <Navigation/>
       <main className='container-wrapper'>
-        <Routes>
-          <Route path="/">
-            <Route index element={<Homepage />} />
-            <Route path="about-us" element={<AboutUs />} />
-            <Route path="case-studies" element={<CaseStudies />} />
-            <Route path="case-studies/:id" element={<SingleCaseStudies />} />
-            <Route path="contact-us" element={<Contact />} />
+        <ScrollToTop>
+          <Routes>
+            <Route path="/">
+              <Route index element={<Homepage />} />
+              <Route path="about-us" element={<AboutUs />} />
+              <Route path="case-studies" element={<CaseStudies />} />
+              <Route path="case-studies/:id" element={<SingleCaseStudies />} />
+              <Route path="contact-us" element={<Contact />} />
 
-            <Route path="*" element={<Error404 />} />
-          </Route>
-        </Routes>
+              <Route path="*" element={<Error404 />} />
+            </Route>
+          </Routes>
+        </ScrollToTop>
       </main>
-
     </div>
   );
 }
