@@ -4,6 +4,11 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'century-gothic': 'var(--century-gothic)',
+      'eurostile': 'var(--eurostile)',
+      'rampont-one': 'var(--rampont-one)',
+    },
     extend: {
       colors: {
         "purple": "var(--nz-purple)",
