@@ -1,0 +1,15 @@
+.item-heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.item-heading:after {
+    content:"";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 110%;
+    height: 2px;
+    background-color: var(--nz-pink);
+}
