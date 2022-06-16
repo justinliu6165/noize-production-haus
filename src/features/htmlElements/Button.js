@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Button.module.css'
+// CSS styles in index.css
 import { Link } from 'react-router-dom'
 
 export default function Button({text, to, clickHandler}) {
@@ -7,12 +7,12 @@ export default function Button({text, to, clickHandler}) {
     <div className="py-8 flex justify-center">
         <div className="inline-block">
             {
-                (!clickHandler && to) && <Link to={to} className={styles['nz-button']}>
+                (!clickHandler && to) && <Link to={to} className={'nz-button'}>
                     <span className="uppercase">{text}</span>
                 </Link>
             }
             {
-                (clickHandler && !to) && <button onClick={clickHandler} className={styles['nz-button']}>
+                (clickHandler && !to) && <button onClick={clickHandler} className={'nz-button'}>
                     <span className="uppercase">{text}</span>
                 </button>
             }
