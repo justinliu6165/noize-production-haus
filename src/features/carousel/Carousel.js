@@ -27,10 +27,14 @@ export default function Carousel() {
     function navigateSlides(dir) {
         if (dir === 'left') {
             setAnimateDirection("clipping-left");
-            shiftActive(dir)
+            setTimeout(() => {
+                shiftActive(dir)
+            }, 100);
         } else {
             setAnimateDirection("clipping-right");
-            shiftActive(dir)
+            setTimeout(() => {
+                shiftActive(dir)
+            }, 100);
         }
     }
 
@@ -46,26 +50,25 @@ export default function Carousel() {
                 <ul className="md:grid gap-16 align-middle grid-cols-6">
                     <li className="hidden md:flex justify-center flex-col"> 
                         <button onClick={() => navigateSlides('left')} className="relative w-full">
-                            <Transitioning id={cases[activeIndex].id} animation={animateDirection} delay={250}>
+                            <Transitioning id={cases[activeIndex].id} animation={animateDirection} delay={500}>
                                 <div className="project-img">
                                     <img src={cases[prevIndex].image.src} alt={cases[prevIndex].image.src}/>
                                     <div className="project-img--overlay"></div>
                                 </div>
                             </Transitioning>
                         </button>
-                        {/* <div className='relative'>
-                            <h3 className="absolute w-full top-full eurostile text-16px uppercase">{cases[prevIndex].title}</h3>
-                        </div> */}
                     </li>
                     <li className="col-span-4"> 
                     
                         <Link to={`/case-studies/${cases[activeIndex].slug}`} className="relative">
                             <Transitioning id={cases[activeIndex].id} animation={animateDirection}>
-                                <div className="project-img" key={cases[activeIndex].id}>
+                                <div className="project-img">
                                     <img src={cases[activeIndex].image.src} alt={cases[activeIndex].image.src}/>
-                                    <div className="p-16 z-10 absolute bottom-0">
-                                        <h3 className="text-24px eurostile uppercase" key={cases[activeIndex].title}>{cases[activeIndex].title}</h3>
-                                    </div>
+                                </div>
+                            </Transitioning>
+                            <Transitioning id={cases[activeIndex].id + "header"} animation={animateDirection} delay={700}>
+                                <div className='project-header z-10 bg-charcoal border-t-2 border-pink'>
+                                    <h3 className="text-16px eurostile uppercase">{cases[activeIndex].title}</h3>
                                 </div>
                             </Transitioning>
                         </Link>
@@ -73,16 +76,13 @@ export default function Carousel() {
                     </li>
                     <li className="hidden md:flex justify-center flex-col"> 
                         <button onClick={() => navigateSlides('right')} className="relative w-full">
-                            <Transitioning id={cases[activeIndex].id} animation={animateDirection} delay={250}>
+                            <Transitioning id={cases[activeIndex].id} animation={animateDirection} delay={500}>
                                 <div className="project-img">
                                     <img src={cases[nextIndex].image.src} alt={cases[nextIndex].image.src}/>
                                     <div className="project-img--overlay"></div>
                                 </div>
                             </Transitioning>
                         </button>
-                        {/* <div className='relative'>
-                            <h3 className="absolute w-full top-full eurostile text-16px uppercase">{cases[nextIndex].title}</h3>
-                        </div> */}
                     </li>
                 </ul>
             </div>

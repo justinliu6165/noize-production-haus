@@ -1,15 +1,21 @@
 :root {
-    --animation-duration: .5s;
-    --animation-delay: .26s;
+    --carousel-animation-duration: 500ms;
+    --carousel-animation-delay: 260ms;
+    --carousel-easing: cubic-bezier(0.79,0.14,0.15,0.86);
 }
 
-.project-img {
+.project-img, .project-header {
     position: relative;
     opacity: 1;
     transition: opacity .8s;
     will-change: clip-path;
     clip-path: polygon(0 0,100% 0,100% 120%,0 120%);
     padding-top: 56.78%;
+}
+
+.project-header {
+    padding: 1rem;
+    position: relative;
 }
 
 .project-img img {
@@ -41,13 +47,13 @@
     clip-path: polygon(100% 0,100% 0,100% 120%,100% 120%);
 }
 .clipping-left-enter-active, .clipping-left-enter {
-    animation: clipshow-left var(--animation-duration) ease var(--animation-delay) forwards;
+    animation: clipshow-left var(--carousel-animation-duration) var(--carousel-easing) var(--carousel-animation-delay) forwards;
 }
 .clipping-left-exit-active {
     clip-path: polygon(0 0,100% 0,100% 120%,0 120%);
 }
 .clipping-left-exit-active, .clipping-left-exit-to {
-    animation: cliphide-left var(--animation-duration) ease var(--animation-delay) forwards;
+    animation: cliphide-left var(--carousel-animation-duration) var(--carousel-easing) var(--carousel-animation-delay) forwards;
 }
 
 @keyframes clipshow-left {
@@ -62,13 +68,13 @@
     clip-path: polygon(0 0,0 0,0 120%,0 120%);
 }
 .clipping-right-enter-active, .clipping-right-enter {
-    animation: clipshow-right var(--animation-duration) ease var(--animation-delay) forwards;
+    animation: clipshow-right var(--carousel-animation-duration) var(--carousel-easing) var(--carousel-animation-delay) forwards;
 }
 .clipping-right-exit-active {
     clip-path: polygon(0 0,100% 0,100% 120%,0 120%);
 }
 .clipping-right-exit-active, .clipping-right-exit-to {
-    animation: cliphide-right var(--animation-duration) ease var(--animation-delay) forwards;
+    animation: cliphide-right var(--carousel-animation-duration) var(--carousel-easing) var(--carousel-animation-delay) forwards;
 }
 
 @keyframes clipshow-right {

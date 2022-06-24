@@ -5,6 +5,7 @@ import Heading from '../../features/htmlElements/Heading'
 import Section from '../../features/htmlElements/Sections'
 import Carousel from '../../features/carousel/Carousel'
 import Definition from '../../features/definition/Definition';
+import Button from '../../features/htmlElements/Button';
 
 import NoizeLogo from '../../assets/images/noize-logo.png'
 import introVideo from '../../assets/videos/super_8_cut.mp4';
@@ -60,11 +61,13 @@ export default function Homepage() {
 
       </Section>
 
-      <Section>
+      <Section classes='max-w-5xl'>
         
         <Heading text={"past work"} size="h2"></Heading>
         
         <Carousel/>
+
+        <Button text="See all case studies" to="/case-studies" />
 
       </Section>
 
