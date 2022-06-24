@@ -60,7 +60,7 @@ export default function AboutUs() {
       <ul className='space-y-16'>
       {
         ourServices.map((item, i) => (
-          <li className={`md:flex ${i % 2 !== 0 ? 'flex-row-reverse' : ''}`}>
+          <li className={`md:flex ${i % 2 !== 0 ? 'flex-row-reverse' : ''}`} key={item.service}>
             <div className={`flex-shrink ${i % 2 !== 0 ? 'md:pl-16' : ''}`}>
               <h2 className={`font-eurostile text-24px md:text-32px ${styles['item-heading']}`}>{item.service}</h2>
               <p>{item.description}</p>
@@ -85,7 +85,7 @@ export default function AboutUs() {
       <ul className='space-y-16'>
       {
         ourMinions.map((item, i) => (
-          <li className="flex flex-col py-16">
+          <li className="flex flex-col py-16" key={item.title}>
             <h2 className={`font-eurostile text-24px mb-16 inline-block`}>{item.title}</h2>
             <div className="md:flex">
               <div style={{minWidth: '150px'}} className="flex-auto my-16 md:my-0">
