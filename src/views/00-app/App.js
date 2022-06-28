@@ -7,6 +7,7 @@ import AboutUs from '../02-about-us/AboutUs';
 import CaseStudies from '../03-case-studies/CaseStudies';
 import SingleCaseStudies from '../04-single-case-study/SingleCaseStudies';
 import Contact from '../05-contact/Contact';
+import Footer from '../../features/standalone/Footer';
 import Error404 from '../06-error-pages/Error404';
 
 import ScrollToTop from '../../features/functions/ScrollToTop';
@@ -30,6 +31,7 @@ function App() {
           </Routes>
         </ScrollToTop>
       </main>
+      <Footer/>
     </div>
   );
 }
