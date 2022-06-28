@@ -8,11 +8,12 @@ export default function Definition() {
         const options = {
             threshold: 0.5
         }
+        
+        const texts = document.querySelectorAll("[data-scramble='true']")
 
         let observer = new IntersectionObserver((entries) => {
             const [ entry ] = entries;
             if(entry.isIntersecting) {
-                const texts = document.querySelectorAll("[data-scramble='true']")
         
                 for(let i = 0; i < texts.length; i++) {
                     new WordScrambler(texts[i], i * 150);
