@@ -1,19 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import WordScrambler from '../../js/WordScrambler';
 
 export default function Definition() {
-
+    const containerRef = useRef(null);
 
     useEffect(() => {
-        const texts = document.querySelectorAll("[data-scramble='true']")
-        
-        for(let i = 0; i < texts.length; i++) {
-            new WordScrambler(texts[i]);
+        const options = {
+            threshold: 0.5
         }
+
+        let observer = new IntersectionObserver((entries) => {
+            const [ entry ] = entries;
+            if(entry.isIntersecting) {
+                const texts = document.querySelectorAll("[data-scramble='true']")
+        
+                for(let i = 0; i < texts.length; i++) {
+                    new WordScrambler(texts[i], i * 150);
+                }
+
+                observer.unobserve(containerRef.current);
+            }
+        }, options);
+
+        if (containerRef.current) observer.observe(containerRef.current);
+
+        return () => {
+            if(containerRef.current) observer.unobserve(containerRef.current)
+        }
+
     }, [])
     
     return (
-        <div style={{minHeight: '500px'}}>
+        <div style={{minHeight: '500px'}} ref={containerRef}>
             <div className="main-column main-column--sm century-gothic space-y-4">
                 <h2 data-scramble="true">noize</h2>
                 <div className="text-24px" data-scramble="true">/noiz/</div>
