@@ -4,12 +4,13 @@ import Background from '../../features/standalone/Background'
 import Heading from '../../features/htmlElements/Heading'
 import Section from '../../features/htmlElements/Sections'
 import Carousel from '../../features/carousel/Carousel'
-import Definition from '../../features/definition/Definition';
-import Button from '../../features/htmlElements/Button';
+import Definition from '../../features/definition/Definition'
+import Button from '../../features/htmlElements/Button'
+import InView from '../../features/inView/InView'
 
 import NoizeLogo from '../../assets/images/noize-logo.png'
-import introVideo from '../../assets/videos/super_8_cut.mp4';
-import placeholderIcon from '../../assets/icons/client.svg';
+import introVideo from '../../assets/videos/super_8_cut.mp4'
+import placeholderIcon from '../../assets/icons/client.svg'
 
 export default function Homepage() {
   return (
@@ -72,9 +73,9 @@ export default function Homepage() {
       </Section>
 
       <Section classes="px-8">
-
-        <Definition/>
-
+        <InView classes="h-full">
+          <Definition/>
+        </InView>
       </Section>
 
     </div>

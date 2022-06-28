@@ -1,7 +1,7 @@
 // Inspiration: https://codepen.io/bionik/pen/dzBweB?editors=1010
 
 class WordScrambler {
-    constructor(el) {
+    constructor(el, delay=0) {
         this.el = el;
         this.codeletters = "忘いイじ料中エト代専宮ヌホフ訃群サニ会管フソホ雄朝ウヌ申寄流ゃ砲暴くこり門覧17謙みイだ紙談わゅフ月刈拒禎阻ば。交シトモ省学ほ最将ニエルハ勝79早でた地属転ヌキニ見隠ろ康8院ざ左方がゅち一掲ざほちさ正主イヘホ階禁ッよび限必テ内山幅もぽ。聞かぼてへ読感26西ニ速質ンるぴや法灯ぱ年諭よじべい老約コ郎子ろいべを術型ヘモ断速立竹チ法6導権ばぎおト災南コマ型品園返奇ひおじ";
         this.current_length = 0;
@@ -11,7 +11,7 @@ class WordScrambler {
         this.animateIn = this.animateIn.bind(this);
         this.animateFadeBuffer = this.animateFadeBuffer.bind(this);
 
-        setTimeout(this.animateIn, 100);
+        setTimeout(this.animateIn, 100 + delay);
     }
     
     generateRandomString = (length) => {
