@@ -4,7 +4,6 @@ import QRCode from '../../assets/images/footer.png'
 
 export default function Footer() {
   return (
-    <>
     <footer className='w-full bg-black h-80'>
       <div className='m-auto pt-16 relative h-full' style={{maxWidth: "500px"}}>
       
@@ -12,6 +11,5 @@ export default function Footer() {
 
       </div>
     </footer>
-    </>
   )
 }
