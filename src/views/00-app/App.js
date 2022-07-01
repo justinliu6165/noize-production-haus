@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <main className='container-wrapper'>
+      <main className='container-wrapper bg-charcoal relative z-10 border-b-8 border-pink'>
         <ScrollToTop>
           <Routes>
             <Route path="/">

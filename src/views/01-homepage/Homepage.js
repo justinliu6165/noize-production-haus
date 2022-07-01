@@ -15,7 +15,7 @@ import placeholderIcon from '../../assets/icons/client.svg'
 export default function Homepage() {
   return (
     <>
-    <div className=''>
+    <div className='relative'>
       <Background/>
       <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-md'>
         <img src={NoizeLogo} alt="Noize Picture Haus" />
